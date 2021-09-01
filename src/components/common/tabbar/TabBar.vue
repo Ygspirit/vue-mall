@@ -14,6 +14,7 @@ export default {
 </script>
 <style>
 #tab-bar {
+  z-index: 9;
   display: flex;
   background-color: #f6f6f6;
 
@@ -24,5 +25,4 @@ export default {
 
   box-shadow: 0 -1px 1px rgba(100, 100, 100, 0.1);
 }
-
 </style>

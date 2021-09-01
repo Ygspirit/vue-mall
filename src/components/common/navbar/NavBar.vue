@@ -19,16 +19,17 @@ export default {
   display: flex;
   height: 44px;
   line-height: 44px;
+  align-items: center;
   text-align: center;
   box-shadow: 0 1px 1px rgba(100,100, 100, .1);
 }
 .left,
 .right {
-  width: 60px;
+  flex: 0.16;
   /* background: red; */
 }
 .center {
-  flex: 1;
+   flex: 0.84;
   /* background: blue; */
 }
 </style>

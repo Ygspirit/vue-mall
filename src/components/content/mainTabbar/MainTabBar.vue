@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="maintabbar">
     <tab-bar>
       <tab-bar-item path='/home'>
         <template v-slot:item-icon
@@ -59,4 +59,6 @@ export default {
   methods: {}
 };
 </script>
-<style></style>
+<style scoped>
+
+</style>

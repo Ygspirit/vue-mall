@@ -1,7 +1,5 @@
 <template>
-  <div>
-      <h2>分类</h2>
-  </div>
+  <div></div>
 </template>
 <script>
 export default {
@@ -9,8 +7,9 @@ export default {
     return {};
   },
   created() {},
+
+  mounted() {},
   methods: {}
 };
 </script>
-<style>
-</style>
+<style></style>
