@@ -1,10 +1,14 @@
 <template>
-  <div>
-    {{iid}}
+  <div id="detail">
+    <detail-nav-bar></detail-nav-bar>
   </div>
 </template>
 <script>
+import DetailNavBar from './childComps/DetailNavBar'
 export default {
+  components: {
+    DetailNavBar
+  },
   data() {
     return {
       iid: null
@@ -12,7 +16,6 @@ export default {
   },
   created() {
     this.iid = this.$route.params.iid;
-
   },
   methods: {}
 };
