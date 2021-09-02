@@ -196,7 +196,7 @@ export default {
 .home-nav {
   background: var(--color-tint);
   color: #fff;
-
+  
   /* 固定nav的位置 */
   /* position: fixed;
   left: 0;

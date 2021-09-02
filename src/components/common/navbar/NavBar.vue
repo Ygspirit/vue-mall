@@ -21,7 +21,7 @@ export default {
   line-height: 44px;
   align-items: center;
   text-align: center;
-  box-shadow: 0 1px 1px rgba(100,100, 100, .1);
+  box-shadow: 0 1px 1px rgba(100, 100, 100, 0.1);
 }
 .left,
 .right {
@@ -29,7 +29,7 @@ export default {
   /* background: red; */
 }
 .center {
-   flex: 0.84;
+  flex: 0.84;
   /* background: blue; */
 }
 </style>
