@@ -21,3 +21,14 @@ export class GoodsInfo {
       this.discountBgColor = itemInfo.discountBgColor
     }
   }
+
+  export class ShopInfo {
+    constructor(shopInfo) {
+      this.logo = shopInfo.shopLogo
+      this.name = shopInfo.name
+      this.fans = shopInfo.cFans
+      this.cSells = shopInfo.cSells
+      this.cGoods = shopInfo.cGoods
+      this.score = shopInfo.score
+    }
+  }
