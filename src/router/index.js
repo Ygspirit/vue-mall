@@ -12,7 +12,7 @@ const Detail = () => import('views/detail/Detail')
 const routes = [
     {
         path: '',
-        redirect: '/home'
+        redirect: '/home',
     },
     {
         path: '/home',
@@ -32,7 +32,8 @@ const routes = [
     },
     {
         path: '/detail/:iid',
-        component: Detail
+        component: Detail,
+        meta: { tabNotShow: true }
     }
 ]
 

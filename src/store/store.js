@@ -4,12 +4,16 @@ import { createStore } from 'vuex'
 const store = createStore({
     state() {
         return {
-            count: 0
+            count: 0,
+            detailImg:0
         }
     },
     mutations: {
         increment(state) {
             state.count++
+        },
+        increment1(state){
+            state.detailImg++
         }
     }
 })

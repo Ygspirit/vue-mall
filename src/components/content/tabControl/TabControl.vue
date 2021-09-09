@@ -42,6 +42,7 @@ export default {
   font-size: 16px;
   height: 40px;
   line-height: 40px;
+  margin-top: -1px;
 
   background: #fff;
 

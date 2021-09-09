@@ -34,7 +34,8 @@ export default {
       disableMouse: false,
       disableTouch: false,
       probeType: this.probeType,
-      pullUpLoad: this.pullUpLoad
+      pullUpLoad: this.pullUpLoad,
+      observeImage:true
     });
 
     // 监听滚动的位置

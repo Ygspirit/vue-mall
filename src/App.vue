@@ -5,7 +5,7 @@
         <component :is="Component" />
       </keep-alive>
     </router-view>
-    <main-tab-bar></main-tab-bar>
+    <main-tab-bar v-if='!$route.meta.tabNotShow'></main-tab-bar>
   </div>
 </template>
 <script>

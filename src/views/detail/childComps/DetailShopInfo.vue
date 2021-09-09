@@ -1,7 +1,7 @@
 <template>
   <div id="detail-shop-info" v-if="Object.keys(shopInfo).length !== 0">
     <div class="top">
-      <img :src="shopInfo.logo" alt="" />
+      <img :src="shopInfo.logo" alt="" @load="loadlogo"/>
       <span>{{ shopInfo.name }}</span>
     </div>
     <div class="center">
@@ -55,6 +55,9 @@ export default {
   methods: {
     rounding(cSells) {
       return (cSells / 10000).toFixed(1);
+    },
+    loadlogo(){
+      this.$emit('loadlogo')
     }
   }
 };
