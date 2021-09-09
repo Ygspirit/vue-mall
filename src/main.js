@@ -10,7 +10,9 @@ app.use(router)
 // 将 store 实例作为插件安装
 app.use(store)
 
+
 app.mount('#app')
+
 
 
 

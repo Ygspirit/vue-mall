@@ -1,17 +1,17 @@
 <template>
   <div id="detail">
-    <detail-nav-bar class="detail-nav"></detail-nav-bar>
+    <detail-nav-bar class="detail-nav" />
     <scroll class="wrapper" ref="scroll">
-      <detail-swiper :top-images="topImages"></detail-swiper>
-      <detail-base-info :goods-info="goodsInfo"></detail-base-info>
-      <detail-shop-info
-        :shop-info="shopInfo"
-        @loadlogo="loadlogo"
-      ></detail-shop-info>
+      <detail-swiper :top-images="topImages" />
+      <detail-base-info :goods-info="goodsInfo" />
+      <detail-shop-info :shop-info="shopInfo" @loadlogo="loadlogo" />
       <detail-goods-info
         :detail-info="detailInfo"
         @handleGoodsImg="handleGoodsImg"
-      ></detail-goods-info>
+      />
+      <detail-params-info :params-info="paramsInfo" />
+      <detail-comment-info :comment-info="commentInfo" />
+      <detail-recommend-info :recommend-info="recommendInfo" />
     </scroll>
   </div>
 </template>
@@ -21,10 +21,13 @@ import DetailSwiper from "./childComps/DetailSwiper";
 import DetailBaseInfo from "./childComps/DetailBaseInfo";
 import DetailShopInfo from "./childComps/DetailShopInfo";
 import DetailGoodsInfo from "./childComps/DetailGoodsInfo";
+import DetailParamsInfo from "./childComps/DetailParamsInfo";
+import DetailCommentInfo from "./childComps/DetailCommentInfo";
+import DetailRecommendInfo from "./childComps/DetailRecommendInfo";
 
 import Scroll from "components/common/scroll/Scroll";
 
-import { getDetail, GoodsInfo, ShopInfo } from "network/detail";
+import { getDetail, GoodsInfo, ShopInfo, ParamsInfo, getRecommend} from "network/detail";
 
 export default {
   components: {
@@ -33,6 +36,9 @@ export default {
     DetailBaseInfo,
     DetailShopInfo,
     DetailGoodsInfo,
+    DetailParamsInfo,
+    DetailCommentInfo,
+    DetailRecommendInfo,
     Scroll
   },
   data() {
@@ -41,7 +47,10 @@ export default {
       topImages: [],
       goodsInfo: {},
       shopInfo: {},
-      detailInfo: {}
+      detailInfo: {},
+      paramsInfo: {},
+      commentInfo: {},
+      recommendInfo: []
     };
   },
   created() {
@@ -64,6 +73,18 @@ export default {
       this.shopInfo = new ShopInfo(data.shopInfo);
       // 保存商品的详细数据
       this.detailInfo = data.detailInfo;
+      // 保存参数信息
+      this.paramsInfo = new ParamsInfo(
+        data.itemParams.info,
+        data.itemParams.rule
+      );
+      // 保存用户评价
+      this.commentInfo = data.rate.list[0];
+    });
+    // 保存推荐商品数据
+    getRecommend().then(res => {
+      this.recommendInfo = res.data.list;
+      console.log(res);
     });
   },
   methods: {
