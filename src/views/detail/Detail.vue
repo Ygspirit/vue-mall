@@ -7,6 +7,9 @@
       :probe-type="3"
       @scroll="contentScroll"
     >
+      <!-- <ul v-for="item in $store.state.cartList" :key="item.id">
+        <li>{{ item }}</li>
+      </ul> -->
       <detail-swiper :top-images="topImages" />
       <detail-base-info :goods-info="goodsInfo" />
       <detail-shop-info :shop-info="shopInfo" @loadlogo="loadlogo" />
@@ -149,7 +152,9 @@ export default {
       product.iid == this.iid;
 
       // 2.将商品添加到购物车里
-      this.$store.commit("addCart", product);
+      this.$store.dispatch("addCart", product);
+
+      // console.log(.iid);
     },
 
     /**
