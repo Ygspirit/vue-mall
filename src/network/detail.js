@@ -18,7 +18,7 @@ export function getRecommend() {
 export class GoodsInfo {
   constructor(itemInfo, columns, shopInfo) {
     this.title = itemInfo.title
-    this.Newprice = itemInfo.price
+    this.Newprice = itemInfo.lowNowPrice
     this.oldPrice = itemInfo.oldPrice
     // 优惠价
     this.discountDesc = itemInfo.discountDesc

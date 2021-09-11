@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item" @click="itemClick">
-    <img :src="goodsItem.show.img" @load="imgLoad" />
+    <img :src="showImage" @load="imgLoad" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
       <span class="price">{{ goodsItem.price }}</span>
@@ -18,11 +18,16 @@ export default {
       }
     }
   },
-  computed: {},
+  computed: {
+    showImage(){
+      return this.goodsItem.image || this.goodsItem.show.img
+    }
+  },
   data() {
     return {};
   },
-  created() {},
+  created() {
+  },
   methods: {
     imgLoad() {
       this.$store.commit("increment");

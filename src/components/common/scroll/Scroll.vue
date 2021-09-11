@@ -35,13 +35,14 @@ export default {
       disableTouch: false,
       probeType: this.probeType,
       pullUpLoad: this.pullUpLoad,
-      observeImage:true
+      observeImage:true,
     });
 
     // 监听滚动的位置
     if (this.probeType === 2 || this.probeType === 3) {
       this.scroll.on("scroll", position => {
         this.$emit("scroll", position);
+        // console.log(position);
       });
     }
 
@@ -69,4 +70,6 @@ export default {
   watch: {}
 };
 </script>
-<style></style>
+<style>
+
+</style>

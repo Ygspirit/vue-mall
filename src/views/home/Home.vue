@@ -152,6 +152,8 @@ export default {
       // 所有的组件都有一个属性$el，用于获取组件中的元素
       this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop;
     },
+
+    
     /**
      * 网络请求相关的方法
      */
