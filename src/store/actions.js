@@ -3,7 +3,7 @@ import { ADD_COUNTER, ADD_TO_CART } from './mutations.type'
 export default {
     addCart({ state, commit }, payload) {
         // 查找之前数组中是否有该商品
-        let oldProduct = state.cartList.find(item => item.iid === payload.idd)
+        let oldProduct = state.cartGoodsList.find(item => item.iid === payload.idd)
 
         // 判断oldProduct
         if (oldProduct) {
