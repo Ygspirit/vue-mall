@@ -50,6 +50,7 @@ import {
 } from "network/detail";
 
 export default {
+  name:'Detail',
   components: {
     DetailNavBar,
     DetailSwiper,
@@ -197,6 +198,16 @@ export default {
     "$store.state.count"() {
       this.$refs.scroll.refresh();
     }
+  },
+  activated() {
+    // 1. 保存传入的iid
+    this.iid = this.$route.params.iid;
+
+    // 2.根据iid请求详情数据
+    this.getDetail();
+
+    // 保存推荐商品数据
+    this.getRecommend();
   }
 };
 </script>

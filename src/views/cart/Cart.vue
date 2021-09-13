@@ -9,6 +9,7 @@ import CartNavBar from "./childComps/CartNavBar";
 import CartGoodsList from "./childComps/CartGoodsList";
 
 export default {
+  name:'Cart',
   data() {
     return {};
   },
